@@ -6,10 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  
   title = 'raad-het-getal';
   randomNumber: number = Math.floor(Math.random()*100);
   mededeling: string = '';
   beurtenResterend: number = 10;
+  
   gok(jenNieuweGok: string) {
     var jenNieuweGokNummer: Number = Number(jenNieuweGok);
     if (this.randomNumber == jenNieuweGokNummer) {
@@ -22,5 +24,11 @@ export class AppComponent {
       this.mededeling = 'Kies een hoger nummer';
     }
     this.beurtenResterend -= 1;
+  }
+
+  reset = () => {
+    this.randomNumber = Math.ceil(Math.random()*100);
+    this.beurtenResterend = 10;
+    this.mededeling = null;
   }
 }
