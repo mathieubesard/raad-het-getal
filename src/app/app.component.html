@@ -1,7 +1,8 @@
 <h1>Raad het getal!</h1>
 <p>Raad een getal tussen 1 en 100.</p>
-<input #jeNieuweGok placeholder="Je nieuwe gok" type="number" [disabled]="beurtenResterend<=0"/>
-<button (click)="gok(jeNieuweGok.value)" [disabled]="beurtenResterend<=0">Gok</button>
+<input #jeNieuweGok placeholder="Je nieuwe gok" type="number" [disabled]="beurtenResterend<=0" matInput />
+<button (click)="gok(jeNieuweGok.value)" [disabled]="beurtenResterend<=0" mat-button #tooltip="matTooltip"
+matTooltip="Klik hier om een gok te wagen" >Gok</button>
 <p>{{ mededeling }}</p>
 <p>Nog {{ beurtenResterend }} beurten resterend.</p>
 <button (click)="reset()">Reset</button>
